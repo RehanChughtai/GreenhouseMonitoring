@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<h1 class="header"><strong>Greenhouse Tracking System</strong></h1>
+<div class="wrapper">
+  <div>
+	 <h3>Temperature/Humidity Levels</h3>
+	 <p>{{tempvalues}}</p> 
+  </div>
+  <div>
+	<h3>{{data.city}}</h3>
+	<p>Temperature: {{data.temperature}}</p>
+	<p>{{data.description}}</p>
+	<p>Min: {{data.temp_min}}</p>
+	<p>Max: {{data.temp_max}}</p>
+	<p>Wind Speed: {{data.wind_speed}}</p>
+  </div>
+  <div>
+	 <h3 class="rain">Rain Conditions</h3>
+	 <p>{{count}} Hours Without Water</p>  
+  </div>
+</div>
+<div class="container">	
+  <div>
+	<h3 class="motion">Enable Motion Senser</h3>
+	<a href="{{url_for('enable_motion')}}" type="button">Enable Motion Senser</a>   
+  </div>
+  <div>
+	<h3 class="light">Light Conditions</h3>
+	<p>{{message}}</p>  
+  </div>
+  <div>
+	<h3 class="buzzer">Disable Buzzer/Motion Sensor</h3>
+	<a href="{{url_for('disable_buzzer')}}" type="button">Disable Buzzer/Motion Sensor</a> 
+  </div>
+</div>
+
+</body>
+</html>
